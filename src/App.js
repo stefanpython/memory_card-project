@@ -1,18 +1,31 @@
 import "./App.css";
-import Card from "./components/Card";
 import Header from "./components/Header";
-import Data from "./Data";
 import CardContainer from "./components/CardContainer";
+import { useState } from "react";
 
 function App() {
+  const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
+  const handleScoreUpdate = (clickedItem) => {
+    if (!clickedItem) {
+      setScore(score + 1);
+    } else {
+      if (score > highScore) {
+        setHighScore(score);
+      }
+      setScore(0);
+    }
+  };
+
   return (
     <div className="App">
-      <h1>AventureTime Memory Game</h1>
+      <h1 className="game--title">AventureTime Memory Game</h1>
 
-      <Header />
+      <Header score={score} highScore={highScore} />
 
       <div className="app--container">
-        <CardContainer />
+        <CardContainer onScoreUpdate={handleScoreUpdate} />
       </div>
     </div>
   );

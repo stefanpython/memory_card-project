@@ -48,3 +48,15 @@ img {
     width: 1em;
   }
 }
+
+.score--container {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  color: wheat;
+}
+
+.game--title {
+  text-align: center;
+  color: antiquewhite;
+}
