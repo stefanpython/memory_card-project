@@ -1,0 +1,23 @@
+.card--container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(130, 223, 203);
+  width: 13%;
+  padding: 1em;
+  border-radius: 2em;
+}
+
+.card--inner {
+  display: flex;
+  background-color: rgb(219, 255, 255);
+  border-radius: 1em;
+}
+
+img {
+  width: 250px;
+  min-width: 50%;
+}
+
+.card--title {
+  text-align: center;
+}
