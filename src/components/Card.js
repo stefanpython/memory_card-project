@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className="card--container">
       <div className="card--inner">
-        <img src="images/1.png" alt="" />
+        <img src={props.imageUrl} alt="" />
       </div>
 
-      <p className="card--title">Jake&Fin</p>
+      <p className="card--title">{props.title}</p>
     </div>
   );
 };
