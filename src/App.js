@@ -1,18 +1,19 @@
 import "./App.css";
 import Card from "./components/Card";
-import Score from "./components/Score";
+import Header from "./components/Header";
 import Data from "./Data";
+import CardContainer from "./components/CardContainer";
 
 function App() {
-  const imgData = Data.map((item) => (
-    <Card title={item.title} imageUrl={item.imageUrl} key={item.id} />
-  ));
   return (
     <div className="App">
-      <h1>Hello react app</h1>
-      <Score />
+      <h1>AventureTime Memory Game</h1>
 
-      <div className="app--container">{imgData}</div>
+      <Header />
+
+      <div className="app--container">
+        <CardContainer />
+      </div>
     </div>
   );
 }

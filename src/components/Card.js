@@ -4,7 +4,7 @@ const Card = (props) => {
   return (
     <div className="card--container">
       <div className="card--inner">
-        <img src={props.imageUrl} alt="" />
+        <img onClick={props.randomize} src={props.imageUrl} alt="" />
       </div>
 
       <p className="card--title">{props.title}</p>

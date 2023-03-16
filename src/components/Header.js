@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-const Score = () => {
+const Header = () => {
   return <h1>Score</h1>;
 };
 
-export default Score;
+export default Header;
