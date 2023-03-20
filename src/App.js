@@ -7,8 +7,8 @@ function App() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
-  const handleScoreUpdate = (clickedItem) => {
-    if (!clickedItem) {
+  const handleScoreUpdate = (clicked) => {
+    if (!clicked) {
       setScore(score + 1);
     } else {
       if (score > highScore) {
@@ -25,7 +25,7 @@ function App() {
       <Header score={score} highScore={highScore} />
 
       <div className="app--container">
-        <CardContainer onScoreUpdate={handleScoreUpdate} />
+        <CardContainer score={score} onScoreUpdate={handleScoreUpdate} />
       </div>
     </div>
   );

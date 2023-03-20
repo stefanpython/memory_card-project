@@ -12,21 +12,31 @@ const CardContainer = (props) => {
     }
   };
 
-  function handleClick() {
-    const newData = [...data];
-    shuffle(newData);
+  function handleClick(clickedId) {
+    let newData = [...data];
+    const clickedCard = newData.find((card) => card.id === clickedId);
+    clickedCard.clicked = !clickedCard.clicked;
+
     setData(newData);
+    shuffle(newData);
   }
+
+  useEffect(() => {
+    if (props.score === 0) {
+      const newData = Data.map((card) => ({ ...card, clicked: false }));
+      setData(newData);
+    }
+  }, [props.score]);
 
   const imgData = data.map((item) => (
     <Card
-      randomize={handleClick}
       title={item.title}
       imageUrl={item.imageUrl}
       key={item.id}
       id={item.id}
-      clickedItem={item.clicked}
-      scoreUpdate={props.onScoreUpdate}
+      clicked={item.clicked}
+      handleClick={handleClick}
+      score={props.onScoreUpdate}
     />
   ));
   return <>{imgData}</>;
