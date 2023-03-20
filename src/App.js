@@ -22,6 +22,11 @@ function App() {
     <div className="App">
       <h1 className="game--title">AventureTime Memory Game</h1>
 
+      <h4 className="app--rules">
+        HOW TO PLAY: Click on an image and get points.But don`t click the same
+        image twice.
+      </h4>
+
       <Header score={score} highScore={highScore} />
 
       <div className="app--container">

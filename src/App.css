@@ -60,3 +60,9 @@ img {
   text-align: center;
   color: antiquewhite;
 }
+
+.app--rules {
+  font-weight: 300;
+  color: white;
+  text-align: center;
+}
